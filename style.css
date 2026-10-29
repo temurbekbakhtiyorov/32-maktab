@@ -583,3 +583,53 @@ button[type="submit"]:hover {
       color: #111827;
       font-weight: 600;
     }
+
+    .news-item {
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.news-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(15,28,46,0.12);
+}
+
+.loader {
+  position: fixed;
+  inset: 0;
+  background: var(--navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: opacity 0.5s;
+}
+.loader.hidden { opacity: 0; pointer-events: none; }
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.menu-toggle span {
+  width: 25px;
+  height: 3px;
+  background: white;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle { display: flex; }
+  .site-header nav {
+    display: none;
+    width: 100%;
+  }
+  .site-header nav.active { display: block; }
+  .site-header nav ul {
+    flex-direction: column;
+    padding: 20px 0;
+  }
+}
+
